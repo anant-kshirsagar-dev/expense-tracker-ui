@@ -1,0 +1,11 @@
+.font-style {
+    font-weight: bold;
+}
+
+.bg-color {
+    background-color: white;
+}
+
+.button-rounded {
+    border-radius: 30px;
+}
