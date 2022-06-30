@@ -1,0 +1,15 @@
+.font-bold {
+    font-weight: bold;
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+.mark-as-required {
+    color: red;
+}
+
+.button-rounded {
+    border-radius: 30px;
+}
