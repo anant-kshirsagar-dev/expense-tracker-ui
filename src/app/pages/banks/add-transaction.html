@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add Bank</title>
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../../css/mdb.min.css">
+    <link rel="stylesheet" href="../../../../css/style.css">
+    <link rel="stylesheet" href="../../../../css/app/common.css">
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="h4">Add New Transaction</h4>
+            </div>
+
+            <br>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 mb-4"></div>
+                    <div class="col-md-6 mb-4">
+                        <form class="border border-light p-5" action="#!">
+                            <p class="text-center h4 mb-4">Transaction Details</p>
+
+                            <div class="form-group">
+                                <label for="amount">Amount</label>
+                                <input type="number" id="amount" class="form-control" placeholder="Example: 100.00">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bank">Bank</label>
+                                <select id="bank" class="form-control mb-4">
+                                    <option></option>
+                                    <option>BOB / Bank of Baroda</option>
+                                    <option>SBI / State Bank of India</option>
+                                    <option>CBI / Central Bank of India</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="paymentMode">Payment Mode</label>
+                                <select id="paymentMode" class="form-control mb-4">
+                                    <option></option>
+                                    <option>BHIM UPI</option>
+                                    <option>Net Banking</option>
+                                    <option>Phone Pe</option>
+                                    <option>Google Pay</option>
+                                    <option>PayTM</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="type">Type of transaction</label>
+                                <select id="type" class="form-control mb-4">
+                                    <option></option>
+                                    <option>Debit (-)</option>
+                                    <option>Credit (+)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="purpose">Description / Purpose</label>
+                                <textarea class="form-control rounded-0" id="purpose" rows="5"
+                                    placeholder="Short description of transaction..."></textarea>
+                            </div>
+
+                            <div class="text-right">
+                                <button class="btn btn-primary btn-md button-rounded text-right" type="submit">Add
+                                    Transaction</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-3 mb-4"></div>
+                </div>
+                <div class="text-right">
+                    <a class="btn btn-primary btn-sm button-rounded">Save</a>
+                    <a class="btn btn-primary btn-sm button-rounded" href="../manage-transactions.html">Back</a>
+                </div>
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="../../../../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../../../../js/popper.min.js"></script>
+        <script type="text/javascript" src="../../../../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../../../js/mdb.min.js"></script>
+</body>
+
+</html>

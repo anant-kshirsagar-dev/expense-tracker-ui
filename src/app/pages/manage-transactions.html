@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../../css/mdb.min.css">
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="../../../css/app/nav-bar.css">
+    <link rel="stylesheet" href="../../../css/app/common.css">
 </head>
 
 <body>
@@ -43,8 +44,114 @@
         </nav>
         <br>
         <!-- Nav-bar common code -->
-        <h1>Manage Transactions</h1>
+        <div class="card">
+            <div class="card-header">
+                <h4 class="text-center h4">Manage Transactions</h4>
+            </div>
+        </div>
+        <br>
 
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <a type="submit" class="btn btn-primary btn-md button-rounded"
+                            href="banks/add-transaction.html">Add
+                            Txn</a>
+                        <button type="button" class="btn btn-primary btn-md button-rounded" data-toggle="modal"
+                            data-target="#basicExampleModal">Search Txn</button>
+                        <button type="button" class="btn btn-primary btn-md button-rounded" data-toggle="modal"
+                            data-target="#basicExampleModal">Select Date</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive text-nowrap">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Date</th>
+                                <th>Amount (INR)</th>
+                                <th>Bank Name</th>
+                                <th>Payment Mode</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>12-July-2022</td>
+                                <td>120.00</td>
+                                <td>Bank of Baroda</td>
+                                <td>Net Banking</td>
+                                <td><a class="far fa-edit" data-toggle="modal"
+                                        data-target="#editModal"></a>&nbsp;&nbsp;&nbsp;<i class="far fa-trash-alt"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>12-July-2022</td>
+                                <td>375.00</td>
+                                <td>State Bank of India</td>
+                                <td>Phone Pe</td>
+                                <td><i class="far fa-edit"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-trash-alt"></i></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>13-July-2022</td>
+                                <td>14500.00</td>
+                                <td>Bank of Baroda</td>
+                                <td>Net Banking</td>
+                                <td><i class="far fa-edit"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-trash-alt"></i></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>14-July-2022</td>
+                                <td>120.00</td>
+                                <td>Bank of Baroda</td>
+                                <td>Net Banking</td>
+                                <td><i class="far fa-edit"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-trash-alt"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination pg-blue">
+                        <li class="page-item">
+                            <span class="page-link">Previous</span>
+                        </li>
+                        <li class="page-item"><a class="page-link">1</a></li>
+                        <li class="page-item active">
+                            <span class="page-link">
+                                2
+                                <span class="sr-only">(current)</span>
+                            </span>
+                        </li>
+                        <li class="page-item"><a class="page-link">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Edit Modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Transaction</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- End your project here-->
         <script type="text/javascript" src="../../../js/jquery.min.js"></script>
