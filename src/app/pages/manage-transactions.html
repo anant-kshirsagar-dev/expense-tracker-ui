@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="../../../css/app/nav-bar.css">
     <link rel="stylesheet" href="../../../css/app/common.css">
+
+    <!--Date Picker CSS-->
+    <link href="../../../css/app/datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <!--Date Picker CSS-->
+
 </head>
 
 <body>
@@ -59,9 +64,7 @@
                             href="banks/add-transaction.html">Add
                             Txn</a>
                         <button type="button" class="btn btn-primary btn-md button-rounded" data-toggle="modal"
-                            data-target="#basicExampleModal">Search Txn</button>
-                        <button type="button" class="btn btn-primary btn-md button-rounded" data-toggle="modal"
-                            data-target="#basicExampleModal">Select Date</button>
+                            data-target="#searchModal">Search Txn</button>
                     </div>
                 </div>
             </div>
@@ -96,7 +99,9 @@
                                 <td>375.00</td>
                                 <td>State Bank of India</td>
                                 <td>Phone Pe</td>
-                                <td><i class="far fa-edit"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-trash-alt"></i></td>
+                                <td><a class="far fa-edit" data-toggle="modal"
+                                        data-target="#editModal"></a>&nbsp;&nbsp;&nbsp;<i class="far fa-trash-alt"></i>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
@@ -104,7 +109,9 @@
                                 <td>14500.00</td>
                                 <td>Bank of Baroda</td>
                                 <td>Net Banking</td>
-                                <td><i class="far fa-edit"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-trash-alt"></i></td>
+                                <td><a class="far fa-edit" data-toggle="modal"
+                                        data-target="#editModal"></a>&nbsp;&nbsp;&nbsp;<i class="far fa-trash-alt"></i>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
@@ -112,7 +119,9 @@
                                 <td>120.00</td>
                                 <td>Bank of Baroda</td>
                                 <td>Net Banking</td>
-                                <td><i class="far fa-edit"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-trash-alt"></i></td>
+                                <td><a class="far fa-edit" data-toggle="modal"
+                                        data-target="#editModal"></a>&nbsp;&nbsp;&nbsp;<i class="far fa-trash-alt"></i>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -141,7 +150,7 @@
         <!-- Edit Modal -->
         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Edit Transaction</h5>
@@ -149,9 +158,117 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
+                                <form class="border border-light p-5" action="#!">
+                                    <p class="text-center h4 mb-4">Transaction Details</p>
+
+                                    <div class="form-group">
+                                        <label for="amount">Date</label>
+                                        <input data-date-format="dd/mm/yyyy" id="fromDatepicker" class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="amount">Amount</label>
+                                        <input type="number" id="amount" class="form-control"
+                                            placeholder="Example: 100.00">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="bank">Bank</label>
+                                        <select id="bank" class="form-control mb-4">
+                                            <option></option>
+                                            <option>BOB / Bank of Baroda</option>
+                                            <option>SBI / State Bank of India</option>
+                                            <option>CBI / Central Bank of India</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="paymentMode">Payment Mode</label>
+                                        <select id="paymentMode" class="form-control mb-4">
+                                            <option></option>
+                                            <option>BHIM UPI</option>
+                                            <option>Net Banking</option>
+                                            <option>Phone Pe</option>
+                                            <option>Google Pay</option>
+                                            <option>PayTM</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="type">Type of transaction</label>
+                                        <select id="type" class="form-control mb-4">
+                                            <option></option>
+                                            <option>Debit (-)</option>
+                                            <option>Credit (+)</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="purpose">Description / Purpose</label>
+                                        <textarea class="form-control rounded-0" id="purpose" rows="5"
+                                            placeholder="Short description of transaction..."></textarea>
+                                    </div>
+
+                                    <div class="text-right">
+                                        <button class="btn btn-primary btn-md button-rounded text-right"
+                                            type="submit">Save
+                                            Transaction</button>
+                                        <button class="btn btn-primary btn-md button-rounded text-right"
+                                            type="submit">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- Edit Modal -->
+
+        <!-- Search Modal -->
+        <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Search Transaction</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 mb-4">
+                                <label for="fromDatepicker">From Date</label>
+                                <input data-date-format="dd/mm/yyyy" id="fromDatepicker" class="form-control">
+                            </div>
+                            <div class="col-lg-6 col-md-12 mb-4">
+                                <label for="toDatepicker">To Date</label>
+                                <input data-date-format="dd/mm/yyyy" id="toDatepicker" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 mb-4">
+                                <div class="form-group">
+                                    <label for="amount">Bank Name</label>
+                                    <input type="text" id="bankName" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 mb-4">
+                                <div class="form-group">
+                                    <label for="paymentMode">Payment Mode</label>
+                                    <input type="text" id="paymentMode" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Search Modal -->
 
         <!-- End your project here-->
         <script type="text/javascript" src="../../../js/jquery.min.js"></script>
@@ -160,6 +277,25 @@
         <script type="text/javascript" src="../../../js/mdb.min.js"></script>
         <script type="text/javascript"></script>
 
+        <!-- Date Picker JS-->
+        <script src="../../../js/app/datepicker/date-picker-jquery.js"></script>
+        <script src="../../../js/app/datepicker/bootstrap-datepicker.min.js"></script>
+        <script type="text/javascript">
+            $('#fromDatepicker').datepicker({
+                weekStart: 1,
+                autoclose: true,
+                todayHighlight: true,
+            });
+            $('#fromDatepicker').datepicker("setDate", new Date());
+
+            $('#toDatepicker').datepicker({
+                weekStart: 1,
+                autoclose: true,
+                todayHighlight: true,
+            });
+            $('#toDatepicker').datepicker("setDate", new Date());
+        </script>
+        <!-- Date Picker JS-->
 </body>
 
 </html>

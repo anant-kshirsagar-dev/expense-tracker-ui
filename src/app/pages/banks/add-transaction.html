@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="../../../../css/mdb.min.css">
     <link rel="stylesheet" href="../../../../css/style.css">
     <link rel="stylesheet" href="../../../../css/app/common.css">
+
+    <!--Date Picker CSS-->
+    <link href="../../../../css/app/datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <!--Date Picker CSS-->
 </head>
 
 <body>
@@ -30,6 +34,11 @@
                     <div class="col-md-6 mb-4">
                         <form class="border border-light p-5" action="#!">
                             <p class="text-center h4 mb-4">Transaction Details</p>
+
+                            <div class="form-group">
+                                <label for="amount">Date</label>
+                                <input data-date-format="dd/mm/yyyy" id="datepicker" class="form-control">
+                            </div>
 
                             <div class="form-group">
                                 <label for="amount">Amount</label>
@@ -93,6 +102,19 @@
         <script type="text/javascript" src="../../../../js/popper.min.js"></script>
         <script type="text/javascript" src="../../../../js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../../../../js/mdb.min.js"></script>
+        <!-- Date Picker JS-->
+        <script src="../../../../js/app/datepicker/date-picker-jquery.js"></script>
+        <script src="../../../../js/app/datepicker/bootstrap-datepicker.min.js"></script>
+        <script type="text/javascript">
+            $('#datepicker').datepicker({
+                weekStart: 1,
+                //daysOfWeekHighlighted: "6,0",
+                autoclose: true,
+                todayHighlight: true,
+            });
+            $('#datepicker').datepicker("setDate", new Date());
+        </script>
+        <!-- Date Picker JS-->
 </body>
 
 </html>
