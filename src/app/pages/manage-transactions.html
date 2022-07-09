@@ -45,6 +45,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="payment-modes.html">Payment Modes</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Categories</a>
+                    </li>
                 </ul>
         </nav>
         <br>
@@ -61,10 +64,9 @@
                 <div class="row">
                     <div class="col-md-12 text-right">
                         <a type="submit" class="btn btn-primary btn-md button-rounded"
-                            href="banks/add-transaction.html">Add
-                            Txn</a>
+                            href="banks/add-transaction.html">Add</a>
                         <button type="button" class="btn btn-primary btn-md button-rounded" data-toggle="modal"
-                            data-target="#searchModal">Search Txn</button>
+                            data-target="#searchModal">Search</button>
                     </div>
                 </div>
             </div>
@@ -126,24 +128,29 @@
                         </tbody>
                     </table>
                 </div>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination pg-blue">
-                        <li class="page-item">
-                            <span class="page-link">Previous</span>
-                        </li>
-                        <li class="page-item"><a class="page-link">1</a></li>
-                        <li class="page-item active">
-                            <span class="page-link">
-                                2
-                                <span class="sr-only">(current)</span>
-                            </span>
-                        </li>
-                        <li class="page-item"><a class="page-link">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination pg-blue">
+                                <li class="page-item">
+                                    <span class="page-link">Previous</span>
+                                </li>
+                                <li class="page-item"><a class="page-link">1</a></li>
+                                <li class="page-item active">
+                                    <span class="page-link">
+                                        2<span class="sr-only">(current)</span>
+                                    </span>
+                                </li>
+                                <li class="page-item"><a class="page-link">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -161,12 +168,10 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-12 mb-4">
-                                <form class="border border-light p-5" action="#!">
-                                    <p class="text-center h4 mb-4">Transaction Details</p>
-
+                                <form class="border border-light p-3" action="#!">
                                     <div class="form-group">
                                         <label for="amount">Date</label>
-                                        <input data-date-format="dd/mm/yyyy" id="fromDatepicker" class="form-control">
+                                        <input data-date-format="dd/mm/yyyy" id="txnDatepicker" class="form-control">
                                     </div>
 
                                     <div class="form-group">
@@ -214,8 +219,7 @@
 
                                     <div class="text-right">
                                         <button class="btn btn-primary btn-md button-rounded text-right"
-                                            type="submit">Save
-                                            Transaction</button>
+                                            type="submit">Save</button>
                                         <button class="btn btn-primary btn-md button-rounded text-right"
                                             type="submit">Cancel</button>
                                     </div>
@@ -234,7 +238,7 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Search Transaction</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Search...</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -251,19 +255,24 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6 col-md-12 mb-4">
+                            <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
                                     <label for="amount">Bank Name</label>
                                     <input type="text" id="bankName" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-12 mb-4">
+                            <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
                                     <label for="paymentMode">Payment Mode</label>
                                     <input type="text" id="paymentMode" class="form-control">
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm button-rounded"
+                            data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-sm button-rounded">Search</button>
                     </div>
                 </div>
             </div>
@@ -294,6 +303,13 @@
                 todayHighlight: true,
             });
             $('#toDatepicker').datepicker("setDate", new Date());
+
+            $('#txnDatepicker').datepicker({
+                weekStart: 1,
+                autoclose: true,
+                todayHighlight: true,
+            });
+            $('#txnDatepicker').datepicker("setDate", new Date());
         </script>
         <!-- Date Picker JS-->
 </body>

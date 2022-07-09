@@ -40,6 +40,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="payment-modes.html">Payment Modes</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Categories</a>
+                    </li>
                 </ul>
         </nav>
         <br>
@@ -54,10 +57,10 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-12 text-right">
-                        <a type="submit" class="btn btn-primary btn-md button-rounded" href="banks/add-bank.html">Add
-                            Bank</a>
+                        <a type="submit" class="btn btn-primary btn-md button-rounded"
+                            href="banks/add-bank.html">Add</a>
                         <button type="button" class="btn btn-primary btn-md button-rounded" data-toggle="modal"
-                            data-target="#basicExampleModal">Search Bank</button>
+                            data-target="#basicExampleModal">Search</button>
                     </div>
                 </div>
             </div>
@@ -191,13 +194,17 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-lg-6 col-md-12 mb-4">
-                                <input placeholder="Search by bank name" type="text" id="inputPlaceholderEx"
-                                    class="form-control">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="bankName">Bank Name</label>
+                                    <input type="text" id="bankName" class="form-control">
+                                </div>
                             </div>
-                            <div class="col-lg-6 col-md-12 mb-4">
-                                <input placeholder="Search by bank code" type="text" id="inputPlaceholderEx"
-                                    class="form-control">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="bankCode">Bank Code</label>
+                                    <input type="text" id="bankCode" class="form-control">
+                                </div>
                             </div>
                         </div>
                     </div>
